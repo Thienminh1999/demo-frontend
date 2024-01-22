@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main-color: #a27b5c;
+  --secondary-color: #fcf7ef;
+}
+
+.ant-tabs-nav {
+  border-block: 1px solid rgb(204, 204, 204);
+  padding-inline: 10%;
+
+  @media (min-width: 1800px) {
+    padding-inline: 15%;
+  }
+
+  @media (max-width: 1200px) {
+    padding-inline: 2%;
+  }
+}
+
+.ant-tabs-nav-list {
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 600;
+  text-transform: uppercase;
+}

@@ -1,0 +1,11 @@
+.container_com {
+  padding-inline: 10%;
+
+  @media (min-width: 1800px) {
+    padding-inline: 15%;
+  }
+
+  @media (max-width: 1200px) {
+    padding-inline: 2%;
+  }
+}
