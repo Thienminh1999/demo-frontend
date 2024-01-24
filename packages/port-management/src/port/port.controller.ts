@@ -7,12 +7,12 @@ import { CreatePort } from "../dtos/CreatePort.dto";
 export class PortController {
   constructor(private portService: PortService) { }
 
-  @MessagePattern("ports_get")
+  @MessagePattern("get_ports")
   getAllPorts() {
     return this.portService.getAll()
   }
 
-  @MessagePattern("ports_post")
+  @MessagePattern("create_port")
   createPort(@Payload() body: CreatePort) {
     return this.portService.createNewPort(body)
   }

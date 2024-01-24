@@ -18,17 +18,17 @@ export class PortController {
   client: ClientKafka;
 
   async onModuleInit() {
-    this.client.subscribeToResponseOf("ports_post");
-    this.client.subscribeToResponseOf("ports_get");
+    this.client.subscribeToResponseOf("create_port");
+    this.client.subscribeToResponseOf("get_ports");
   }
 
-  @Post("/create-port")
+  @Post("/ports")
   createPort(@Body() body): any {
-    return this.client.send("ports_post", body);
+    return this.client.send("create_port", body);
   }
 
-  @Get("/get-ports")
+  @Get("/ports")
   findPort(@Body() body): any {
-    return this.client.send("ports_get", body);
+    return this.client.send("get_ports", body);
   }
 }
