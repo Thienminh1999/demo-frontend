@@ -18,6 +18,7 @@ export class PortController {
   client: ClientKafka;
 
   async onModuleInit() {
+    this.client.subscribeToResponseOf("create_raw_ports");
     this.client.subscribeToResponseOf("create_port");
     this.client.subscribeToResponseOf("get_ports");
     this.client.subscribeToResponseOf("get_port");
@@ -28,6 +29,11 @@ export class PortController {
   @Post("/")
   createPort(@Body() body): any {
     return this.client.send("create_port", body);
+  }
+
+  @Post("/create_raw_ports")
+  createRawPorts(@Body() body): any {
+    return this.client.send("create_raw_ports", body);
   }
 
   @Get("/")

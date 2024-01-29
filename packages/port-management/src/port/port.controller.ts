@@ -19,6 +19,11 @@ export class PortController {
     return this.portService.getPort(id)
   }
 
+  @MessagePattern("create_raw_ports")
+  createRawPorts() {
+    return this.portService.createRawPorts()
+  }
+
   @MessagePattern("create_port")
   createPort(@Payload() body: CreatePort) {
     return this.portService.createNewPort(body)
