@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { Client, ClientKafka, Transport } from "@nestjs/microservices";
 
-@Controller("port")
+@Controller("ports")
 export class PortController {
   @Client({
     transport: Transport.KAFKA,
@@ -20,15 +20,33 @@ export class PortController {
   async onModuleInit() {
     this.client.subscribeToResponseOf("create_port");
     this.client.subscribeToResponseOf("get_ports");
+    this.client.subscribeToResponseOf("get_port");
+    this.client.subscribeToResponseOf("update_port");
+    this.client.subscribeToResponseOf("delete_port");
   }
 
-  @Post("/ports")
+  @Post("/")
   createPort(@Body() body): any {
     return this.client.send("create_port", body);
   }
 
-  @Get("/ports")
+  @Get("/")
   findPort(@Body() body): any {
     return this.client.send("get_ports", body);
+  }
+
+  @Get(':id')
+  findPortById(@Param('id') id): any {
+    return this.client.send("get_port", id);
+  }
+
+  @Put("/")
+  updatePort(@Body() body): any {
+    return this.client.send("update_port", body);
+  }
+
+  @Delete(':id')
+  deletePort(@Param('id') id): any {
+    return this.client.send("delete_port", id);
   }
 }
