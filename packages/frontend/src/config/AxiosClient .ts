@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 
 const httpClient = axios.create({
-  baseURL: process.env.BACK_END_URL,
+  baseURL: "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
   },
