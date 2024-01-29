@@ -18,12 +18,12 @@ export abstract class BaseEntity {
   @CreateDateColumn({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
   createDateTime?: Date;
 
-  @Column({ type: "varchar", length: 300, default: '' })
+  @Column({ type: "varchar", length: 300, default: 'SYSTEM' })
   createdBy?: string;
 
   @UpdateDateColumn({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
   lastChangedDateTime?: Date;
 
-  @Column({ type: "varchar", length: 300, default: '' })
+  @Column({ type: "varchar", length: 300, default: 'SYSTEM' })
   lastChangedBy?: string;
 }
