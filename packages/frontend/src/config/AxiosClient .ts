@@ -1,7 +1,8 @@
+import { BE_URL } from "@/shared/constants/beUrl";
 import axios, { AxiosError } from "axios";
 
 const httpClient = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: BE_URL,
   headers: {
     "Content-Type": "application/json",
   },
