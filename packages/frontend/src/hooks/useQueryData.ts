@@ -6,10 +6,12 @@ type QueryDataProps = {
   queryKey: string;
 };
 
-function useQueryData<T>({ endPoint, queryKey }: QueryDataProps) {
-  const { data } = useQuery({
+export const useQueryData = ({ endPoint, queryKey }: QueryDataProps) => {
+  const { data, isLoading, isError } = useQuery({
     queryKey: [queryKey],
     queryFn: () =>
-      httpClient.get<{ data: T }>(endPoint).then((res) => res.data),
+      httpClient.get(endPoint).then((res) => res?.data || []),
   });
+  
+  return { data, isLoading, isError };
 }
