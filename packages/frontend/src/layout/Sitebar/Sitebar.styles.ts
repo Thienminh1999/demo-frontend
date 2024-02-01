@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const SitebarContainer = styled.div`
     height: 100vh;
-    width: 250px;
+    min-width: 200px;
 `
 
 export const MenuList = styled.ul`

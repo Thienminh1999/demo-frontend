@@ -15,21 +15,25 @@ export const columns: TableProps<any>["columns"] = [
     title: "Port Code",
     dataIndex: "portCode",
     key: "portCode",
+    width: 150,
   },
   {
     title: "Vessels In Port",
     dataIndex: "vesselsInPort",
     key: "vesselsInPort",
+    width: 150,
   },
   {
     title: "Departures",
     dataIndex: "departures",
     key: "departures",
+    width: 110,
   },
   {
     title: "Arrivals",
     dataIndex: "arrivals",
     key: "arrivals",
+    width: 100,
   },
   {
     title: "Type",
