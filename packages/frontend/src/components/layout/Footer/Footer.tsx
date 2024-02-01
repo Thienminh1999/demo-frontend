@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import Container from "../Component/Container/Container";
+import Container from "../Container/Container";
 
 function Footer() {
   return (

@@ -1,8 +1,7 @@
 "use client";
 import { TanstackProvider } from "@/config/TanstackProvider";
 import { theme } from "@/config/theme";
-import Sitebar from "@/layout/Sitebar/Sitebar";
-import "@/styles/globals.css";
+import Sitebar from "./Sitebar/Sitebar";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";  
 

@@ -1,6 +1,6 @@
 import httpClient from "@/config/AxiosClient ";
 
-export const TableAPIs = {
+export const TableFetcher = {
     async getAllPort() {
         try {
             const result = await httpClient.get("/ports");

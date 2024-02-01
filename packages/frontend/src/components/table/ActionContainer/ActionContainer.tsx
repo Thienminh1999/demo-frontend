@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "./ActionContainer.styles";
-import StyledButton from "@/UI/StyledButton/StyledButton";
+import StyledButton from "@/shared/components/StyledButton/StyledButton";
 import FormContainer from "../FormContainer/FormContainer";
 import { Modal } from "antd";
 

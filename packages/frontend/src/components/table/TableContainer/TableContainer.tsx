@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Table } from "antd";
 import { ContainerTable, StyledTable } from "./TableContainer.style";
 import { columns } from "@/shared/constants/table.constant";
 import { useQueryData } from "@/hooks/useQueryData";
