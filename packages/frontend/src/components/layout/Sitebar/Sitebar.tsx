@@ -14,7 +14,7 @@ function Sitebar() {
 
   const DUMMY_MENU = [
     {
-      href: "/homepage",
+      href: "/",
       icon: faHouse,
       name: "Dashboard",
     },
