@@ -3,5 +3,9 @@
   "dashboard": "Bảng Điều Khiển",
   "addnewport": "Thêm Cảng",
   "english": "English",
-  "vietnamese": "Tiếng Việt"
+  "vietnamese": "Tiếng Việt",
+  "button": {
+    "submit": "Gửi",
+    "cancel": "Huỷ"
+  }
 }

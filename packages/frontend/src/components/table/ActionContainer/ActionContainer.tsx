@@ -24,7 +24,7 @@ function ActionContainer() {
     <Container>
       <StyledButton onClick={showModal}>{t('addnewport')}</StyledButton>
       <Modal
-        title="Add New Port"
+        title={t('addnewport')}
         open={isModalOpen}
         footer={null}
         onCancel={handleCancel}

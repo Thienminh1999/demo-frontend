@@ -1,0 +1,14 @@
+{
+  "portcols": {
+    "country": "Country",
+    "name": "Name",
+    "portCode": "Port Code",
+    "vesselsInPort": "Vessels In Port",
+    "departures": "Departures",
+    "arrivals": "Arrivals",
+    "type": "Type",
+    "areaLocal": "Area Local",
+    "areaGlobal": "Area Global",
+    "otherPortNames": "Other Port Names"
+  }
+}

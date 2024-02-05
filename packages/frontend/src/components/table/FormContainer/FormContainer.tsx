@@ -1,4 +1,5 @@
 import React, { FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   onSubmitForm: () => void;
@@ -6,6 +7,7 @@ type Props = {
 };
 
 function FormContainer({ onSubmitForm, onCancel }: Props) {
+  const { t } = useTranslation(['common', 'table']);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -17,7 +19,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
     <form className="m-1" onSubmit={handleSubmit}>
       <div className="grid gap-6 mb-6 md:grid-cols-2">
         <div>
-          <label className="block">Country</label>
+          <label className="block">{t('table:portcols.country')}</label>
           <input
             name="country"
             type="text"
@@ -25,7 +27,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Name</label>
+          <label className="block">{t('table:portcols.name')}</label>
           <input
             name="name"
             type="text"
@@ -33,7 +35,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Port Code</label>
+          <label className="block">{t('table:portcols.portCode')}</label>
           <input
             name="portCode"
             type="text"
@@ -41,7 +43,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Vessels In Port</label>
+          <label className="block">{t('table:portcols.vesselsInPort')}</label>
           <input
             name="vesselsInPort"
             type="text"
@@ -49,7 +51,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Departures</label>
+          <label className="block">{t('table:portcols.departures')}</label>
           <input
             name="departures"
             type="text"
@@ -57,7 +59,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Arrivals</label>
+          <label className="block">{t('table:portcols.arrivals')}</label>
           <input
             name="arrivals"
             type="text"
@@ -65,7 +67,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Type</label>
+          <label className="block">{t('table:portcols.type')}</label>
           <input
             name="type"
             type="text"
@@ -73,7 +75,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Area Local</label>
+          <label className="block">{t('table:portcols.areaLocal')}</label>
           <input
             name="areaLocal"
             type="text"
@@ -81,7 +83,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Area Global</label>
+          <label className="block">{t('table:portcols.areaGlobal')}</label>
           <input
             name="areaGlobal"
             type="text"
@@ -89,7 +91,7 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           />
         </div>
         <div>
-          <label className="block">Other Port Names</label>
+          <label className="block">{t('table:portcols.otherPortNames')}</label>
           <input
             name="otherPortNames"
             type="text"
@@ -102,13 +104,13 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
           className="block bg-teal-500 text-white px-2 py-1 rounded"
           type="submit"
         >
-          Submit
+          {t('common:button.submit')}
         </button>
         <button
           className="block bg-red-500 text-white px-2 py-1 rounded"
           onClick={() => onCancel()}
         >
-          Cancel
+          {t('common:button.cancel')}
         </button>
       </div>
     </form>

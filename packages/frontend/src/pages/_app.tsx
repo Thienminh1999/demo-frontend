@@ -12,7 +12,7 @@ import Cookies from "js-cookie";
 import { DEFAULT_LANGUAGE, MY_LANGUAGE } from "@/shared/constants/locale.constant";
 
 function App({ Component, pageProps }: AppProps) {
-  const locale = Cookies.get(MY_LANGUAGE) || DEFAULT_LANGUAGE
+  const locale = Cookies.get(MY_LANGUAGE)
   useSyncLanguage(locale);
   
   return (

@@ -3,5 +3,9 @@
   "dashboard": "Dashboard",
   "addnewport": "Add New",
   "english": "English",
-  "vietnamese": "Tiếng Việt"
+  "vietnamese": "Tiếng Việt",
+  "button": {
+    "submit": "Submit",
+    "cancel": "Cancel"
+  }
 }

@@ -4,8 +4,16 @@ import { columns } from "@/shared/constants/table.constant";
 import { useQueryData } from "@/hooks/useQueryData";
 import { endPoint } from "@/shared/constants/beUrl";
 import { usePortStore } from "@/store/usePortStore";
+import { useTranslation } from "react-i18next";
 
 function TableContainer() {
+  const { t } = useTranslation('table');
+
+const tColumns = columns?.map((column) => ({
+    ...column,
+    title: t(`portcols.${column.key}`),
+  }));
+
   const { ports, setPorts } = usePortStore();
   const { data, isLoading, isError } = useQueryData({
     endPoint: endPoint.ports,
@@ -29,9 +37,9 @@ function TableContainer() {
         }}
         rowKey="id"
         dataSource={ports}
-        columns={columns}
+        columns={tColumns}
         loading={isLoading}
-        pagination={{ position: ["bottomCenter"] }}
+        pagination={{ position: ["bottomCenter"], showSizeChanger: false, pageSize: 7 }}
       />
     </ContainerTable>
   );

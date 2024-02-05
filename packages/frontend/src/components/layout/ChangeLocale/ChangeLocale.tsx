@@ -8,18 +8,18 @@ import { Select } from 'antd';
 
 export default function ChangeLocale() {
   const {i18n, t} = useTranslation();
-  const locale = i18n.resolvedLanguage || DEFAULT_LANGUAGE;
 
   const switchLocaleAction = (value: string) => {
     Cookies.set(MY_LANGUAGE, value);
     i18n.changeLanguage(value);
+    console.log('CURRENT LANG', i18n.resolvedLanguage);
   }
 
   return (
     <>
       <Select
         onChange={value => switchLocaleAction(value)}
-        value={locale}
+        value={i18n.resolvedLanguage}
       >
         <Select.Option value="en">🇺🇸 {t('english')}</Select.Option>
         <Select.Option value="vi">🇻🇳 {t('vietnamese')}</Select.Option>
