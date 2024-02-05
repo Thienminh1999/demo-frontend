@@ -15,5 +15,6 @@ export const MenuItem = styled.li<{ $isActive: boolean }>`
     margin-block: 1rem;
     padding-left: 2rem;
     width: 100%;
-    color: ${props => props.$isActive ? "#64C5B1" : ''};
+    color: ${props => props.$isActive ? "#bd0f72" : ''};
+    font-weight: ${props => props.$isActive ? "600" : ''};
 `

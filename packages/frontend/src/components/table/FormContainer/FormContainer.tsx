@@ -101,13 +101,13 @@ function FormContainer({ onSubmitForm, onCancel }: Props) {
       </div>
       <div className="flex justify-center gap-3">
         <button
-          className="block bg-teal-500 text-white px-2 py-1 rounded"
+          className="block bg-pink-600 text-white px-4 py-1 rounded"
           type="submit"
         >
           {t('common:button.submit')}
         </button>
         <button
-          className="block bg-red-500 text-white px-2 py-1 rounded"
+          className="block text-pink-600 px-3 py-1 rounded hover:bg-pink-100"
           onClick={() => onCancel()}
         >
           {t('common:button.cancel')}

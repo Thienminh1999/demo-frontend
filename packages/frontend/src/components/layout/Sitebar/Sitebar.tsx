@@ -3,12 +3,12 @@ import { MenuItem, MenuList, SitebarContainer } from "./Sitebar.styles";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendarDays,
   faHouse,
   faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import ChangeLocale from "../ChangeLocale/ChangeLocale";
 
 function Sitebar() {
   const { t } = useTranslation();
@@ -28,15 +28,16 @@ function Sitebar() {
   ];
 
   return (
-    <SitebarContainer>
+    <SitebarContainer className="bg-gray-50">
       <MenuList>
+      <ChangeLocale/>
         {DUMMY_MENU.map((menu, index) => {
           const isActive = pathName === menu.href;
           return (
             <MenuItem $isActive={isActive} key={index}>
               <Link href={menu.href}>
                 <FontAwesomeIcon
-                  color='#64C5B1'
+                  color='#bd0f72'
                   className='me-[1rem]'
                   icon={menu.icon}
                 />

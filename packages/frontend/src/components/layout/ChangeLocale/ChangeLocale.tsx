@@ -7,9 +7,9 @@ import {
 } from "@/shared/constants/locale.constant";
 import { usePortStore } from "@/store/usePortStore";
 
-export default function ChangeLocale(props: any) {
+export default function ChangeLocale() {
   const { i18n, t } = useTranslation();
-  const {setLocale, locale } = usePortStore();
+  const { setLocale, locale } = usePortStore();
 
   const switchLocaleAction = (value: string) => {
     Cookies.set(MY_LANGUAGE, value)
@@ -18,14 +18,22 @@ export default function ChangeLocale(props: any) {
   };
 
   return (
-    <>
-      <select
-        onChange={(e) => switchLocaleAction(e.target.value)}
-        value={locale}
-      >
-        <option value='en'>US {t("english")}</option>
-        <option value='vi'>VN {t("vietnamese")}</option>
-      </select>
-    </>
+    <div className="mx-auto p-4 bg-gray-100 shadow-md text-center">
+      <div className="mb-2">
+        <label className="font-bold">
+          {t('selectlanguage')}
+        </label>
+      </div>
+      <div>
+        <select
+          className="p-1 w-40 border-2 rounded-md transition-all duration-300 focus:border-pink-600 hover:border-pink-600 focus-visible:outline-none focus-visible:border-pink-600"
+          onChange={(e) => switchLocaleAction(e.target.value)}
+          value={locale}
+        >
+          <option value='en'>{t('english')}</option>
+          <option value='vi'>{t('vietnamese')}</option>
+        </select>
+      </div>
+    </div>
   );
 }
