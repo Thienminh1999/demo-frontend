@@ -1,3 +1,14 @@
 {
-  "table": "Bảng"
+  "portcols": {
+    "country": "Quốc Gia",
+    "name": "Tên",
+    "portCode": "Mã Cảng",
+    "vesselsInPort": "Tàu Trong Cảng",
+    "departures": "Rời Cảng",
+    "arrivals": "Cập Cảng",
+    "type": "Loại",
+    "areaLocal": "Địa Phương",
+    "areaGlobal": "Toàn Cầu",
+    "otherPortNames": "Tên Khác"
+  }
 }

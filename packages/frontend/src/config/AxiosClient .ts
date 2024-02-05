@@ -1,5 +1,5 @@
 import { BE_URL } from "@/shared/constants/beUrl";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const httpClient = axios.create({
   baseURL: BE_URL,

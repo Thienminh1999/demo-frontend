@@ -5,6 +5,7 @@ export const columns: TableProps<any>["columns"] = [
     title: "Country",
     dataIndex: "country",
     key: "country",
+    width: 100,
   },
   {
     title: "Name",
@@ -39,6 +40,7 @@ export const columns: TableProps<any>["columns"] = [
     title: "Type",
     dataIndex: "type",
     key: "type",
+    width: 100,
   },
   {
     title: "Area Local",

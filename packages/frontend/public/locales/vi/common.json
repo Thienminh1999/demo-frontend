@@ -1,0 +1,12 @@
+{
+  "table": "Quản Lý Cảng",
+  "dashboard": "Bảng Điều Khiển",
+  "addnewport": "Thêm Cảng",
+  "english": "English",
+  "vietnamese": "Tiếng Việt",
+  "selectlanguage": "Chọn Ngôn Ngữ",
+  "button": {
+    "submit": "Gửi",
+    "cancel": "Huỷ"
+  }
+}
