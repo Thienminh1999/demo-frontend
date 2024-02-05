@@ -3,14 +3,14 @@
 import TitleContainer from "@/shared/components/TitleContainer/TitleContainer";
 import React from "react";
 import TableContainer from "@/components/table/TableContainer/TableContainer";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from 'react-i18next'
 import ActionContainer from "@/components/table/ActionContainer/ActionContainer";
 
 function Page() {
-  const { t } = useTranslation('table');
+  const { t } = useTranslation();
   return (
     <>
-      <TitleContainer title={t("table")} />
+      <TitleContainer title={t('table')} />
       <ActionContainer />
       <TableContainer />
     </>

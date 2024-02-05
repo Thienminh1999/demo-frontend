@@ -3,9 +3,11 @@ import { Container } from "./ActionContainer.styles";
 import StyledButton from "@/shared/components/StyledButton/StyledButton";
 import FormContainer from "../FormContainer/FormContainer";
 import { Modal } from "antd";
+import { useTranslation } from "react-i18next";
 
 function ActionContainer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -20,7 +22,7 @@ function ActionContainer() {
   };
   return (
     <Container>
-      <StyledButton onClick={showModal}>Add New Port</StyledButton>
+      <StyledButton onClick={showModal}>{t('addnewport')}</StyledButton>
       <Modal
         title="Add New Port"
         open={isModalOpen}

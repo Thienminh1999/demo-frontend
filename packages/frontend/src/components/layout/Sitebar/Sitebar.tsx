@@ -8,25 +8,22 @@ import {
   faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 function Sitebar() {
+  const { t } = useTranslation();
   const pathName = usePathname();
 
   const DUMMY_MENU = [
     {
       href: "/",
       icon: faHouse,
-      name: "Dashboard",
+      name: `${t('dashboard')}`,
     },
     {
       href: "/table",
       icon: faTable,
-      name: "Table",
-    },
-    {
-      href: "/calendar",
-      icon: faCalendarDays,
-      name: "Calendar",
+      name: `${t('table')}`,
     },
   ];
 
