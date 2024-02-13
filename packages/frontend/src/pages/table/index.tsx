@@ -1,16 +1,13 @@
-"use client";
-
 import TitleContainer from "@/shared/components/TitleContainer/TitleContainer";
 import React from "react";
 import TableContainer from "@/components/table/TableContainer/TableContainer";
-import { useTranslation } from 'react-i18next'
 import ActionContainer from "@/components/table/ActionContainer/ActionContainer";
+import i18n from "@/locales/core/i18n";
 
 function Page() {
-  const { t } = useTranslation();
   return (
     <>
-      <TitleContainer title={t('table')} />
+      <TitleContainer title={i18n.getText('common.portmanagement')} />
       <ActionContainer />
       <TableContainer />
     </>

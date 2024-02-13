@@ -9,6 +9,8 @@ interface PortState {
   setPorts: (ports: PortDataType) => void
   setLocale: (locale: string) => void
   locale: string
+  modalState: boolean
+  toggleModal: (state: boolean) => void
 }
 
 const initialState: PortDataType = [];
@@ -16,6 +18,8 @@ const initialState: PortDataType = [];
 export const usePortStore = create<PortState>((set) => ({
   ports: initialState,
   locale: Cookies.get(MY_LANGUAGE) || DEFAULT_LANGUAGE,
+  modalState: false,
   setPorts: (ports: PortDataType) => set(() => ({ ports: ports })),
   setLocale: (newLocale: string) => set(() => ({ locale: newLocale })),
+  toggleModal: (state: boolean) => set(() => ({ modalState: state })),
 }));

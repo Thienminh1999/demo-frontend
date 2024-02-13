@@ -1,0 +1,28 @@
+{
+  "common": {
+    "portmanagement": "Quản Lý Cảng",
+    "dashboard": "Bảng Điều Khiển",
+    "addnewport": "Thêm Cảng",
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "selectlanguage": "Chọn Ngôn Ngữ",
+    "button": {
+      "submit": "Gửi",
+      "cancel": "Huỷ"
+    }
+  },
+  "table": {
+    "portcols": {
+      "country": "Quốc Gia",
+      "name": "Tên",
+      "portCode": "Mã Cảng",
+      "vesselsInPort": "Tàu Trong Cảng",
+      "departures": "Rời Cảng",
+      "arrivals": "Cập Cảng",
+      "type": "Loại",
+      "areaLocal": "Địa Phương",
+      "areaGlobal": "Toàn Cầu",
+      "otherPortNames": "Tên Khác"
+    }
+  }
+}
