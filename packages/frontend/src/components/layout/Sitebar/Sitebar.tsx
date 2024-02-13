@@ -7,37 +7,37 @@ import {
   faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
-import { useTranslation } from "react-i18next";
 import ChangeLocale from "../ChangeLocale/ChangeLocale";
+import { ColorDefaultEnum } from "@/config/colors.constant";
+import i18n from "@/locales/core/i18n";
 
 function Sitebar() {
-  const { t } = useTranslation();
   const pathName = usePathname();
 
   const DUMMY_MENU = [
     {
       href: "/",
       icon: faHouse,
-      name: `${t('dashboard')}`,
+      name: `${i18n.getText('common.dashboard')}`,
     },
     {
       href: "/table",
       icon: faTable,
-      name: `${t('table')}`,
+      name: `${i18n.getText('common.portmanagement')}`,
     },
   ];
 
   return (
     <SitebarContainer className="bg-gray-50">
       <MenuList>
-      <ChangeLocale/>
+        <ChangeLocale />
         {DUMMY_MENU.map((menu, index) => {
           const isActive = pathName === menu.href;
           return (
             <MenuItem $isActive={isActive} key={index}>
               <Link href={menu.href}>
                 <FontAwesomeIcon
-                  color='#bd0f72'
+                  color={ColorDefaultEnum.ONE_THEME_COLOR}
                   className='me-[1rem]'
                   icon={menu.icon}
                 />

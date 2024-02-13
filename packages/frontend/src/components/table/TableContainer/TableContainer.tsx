@@ -1,28 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ContainerTable, StyledTable } from "./TableContainer.style";
-import { columns } from "@/shared/constants/table.constant";
-import { useQueryData } from "@/hooks/useQueryData";
-import { endPoint } from "@/shared/constants/beUrl";
-import { usePortStore } from "@/store/usePortStore";
-import { useTranslation } from "react-i18next";
+import { QueryKeys, columns } from "@/shared/constants/table.constant";
+import { useQuery } from "@tanstack/react-query";
+import { TableFetcher } from "@/pages/table/table.fetcher";
+import i18n from "@/locales/core/i18n";
 
 function TableContainer() {
-  const { t } = useTranslation('table');
-
-const tColumns = columns?.map((column) => ({
+  // Translate columns
+  const tColumns = columns?.map((column) => ({
     ...column,
-    title: t(`portcols.${column.key}`),
+    title: i18n.getText(`table.portcols.${column.key}`),
   }));
 
-  const { ports, setPorts } = usePortStore();
-  const { data, isLoading, isError } = useQueryData({
-    endPoint: endPoint.ports,
-    queryKey: "ports-table",
+  const { data: ports, isLoading, isError } = useQuery({
+    queryKey: [QueryKeys.PORT_DATA],
+    queryFn: TableFetcher.getAllPort
   });
-
-  useEffect(() => {
-    setPorts(data?.result || []);
-  }, [data, setPorts]);
 
   if (isError) {
     return <p>Error fetching ports.</p>;

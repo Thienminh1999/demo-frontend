@@ -58,3 +58,7 @@ export const columns: TableProps<any>["columns"] = [
     key: "otherPortNames",
   },
 ];
+
+export enum QueryKeys {
+  PORT_DATA = 'portData',
+}

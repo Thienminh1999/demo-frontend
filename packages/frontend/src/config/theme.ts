@@ -1,4 +1,3 @@
-"use client";
 import { ThemeConfig } from "antd";
 import { ColorDefaultEnum } from "./colors.constant";
 
