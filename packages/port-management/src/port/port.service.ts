@@ -4,7 +4,6 @@ import { CreatePort } from "../dtos/CreatePort.dto";
 import { Port } from "../model/port.entity";
 import { Repository } from "typeorm";
 import { UpdatePort } from "../dtos/UpdatePort.dto";
-import { DeletePort } from "../dtos/DeletePort.dto";
 import { RAW_PORT_DATA } from "./port.constant";
 
 import { ResponseObject } from "../utils/ResponseUtil";
@@ -79,8 +78,8 @@ export class PortService {
     return ResponseObject<Port>(200, result)
   }
 
-  public async deletePort(port: DeletePort) {
-    const deletePort = await this.repo.findOneBy({ id: port.id })
+  public async deletePort(id: string) {
+    const deletePort = await this.repo.findOneBy({ id: id })
     deletePort.delflg = true;
     const result = await this.repo.save(deletePort);
     return ResponseObject<Port>(200, result)

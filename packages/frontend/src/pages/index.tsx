@@ -5,19 +5,13 @@ import { QueryKeys } from "@/shared/constants/table.constant";
 import { useQuery } from "@tanstack/react-query";
 import i18n from "@/locales/core/i18n";
 import DashBoardContainer from "@/components/dashboard/DashBoardContainer";
+import { useQueryPortData } from "@/hooks/useQueryPortData";
 
 function index() {
-  const {
-    data: ports,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: [QueryKeys.PORT_DATA],
-    queryFn: TableFetcher.getAllPort,
-  });
+  const { data: ports, isLoading, isError } = useQueryPortData();
 
   if (isError) {
-    return <p>Error fetching ports.</p>;
+    return <div>Error fetching ports.</div>;
   }
 
   return (

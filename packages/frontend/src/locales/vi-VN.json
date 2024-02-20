@@ -2,13 +2,15 @@
   "common": {
     "portmanagement": "Quản Lý Cảng",
     "dashboard": "Bảng Điều Khiển",
-    "addnewport": "Thêm Cảng",
+    "addnewport": "Thêm Mới",
+    "editport": "Chỉnh Sửa",
     "english": "English",
     "vietnamese": "Tiếng Việt",
     "selectlanguage": "Chọn Ngôn Ngữ",
     "button": {
       "submit": "Gửi",
-      "cancel": "Huỷ"
+      "cancel": "Huỷ",
+      "save": "Lưu"
     }
   },
   "table": {
@@ -22,7 +24,8 @@
       "type": "Loại",
       "areaLocal": "Địa Phương",
       "areaGlobal": "Toàn Cầu",
-      "otherPortNames": "Tên Khác"
+      "otherPortNames": "Tên Khác",
+      "operations": "Thao Tác"
     }
   }
 }
