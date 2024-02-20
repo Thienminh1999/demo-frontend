@@ -1,31 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "./ActionContainer.styles";
 import StyledButton from "@/shared/components/StyledButton/StyledButton";
 import FormContainer from "../FormContainer/FormContainer";
 import { Modal } from "antd";
-import { usePortStore } from "@/store/usePortStore";
+import { initialModalState, usePortStore } from "@/store/usePortStore";
 import i18n from "@/locales/core/i18n";
 
 function ActionContainer() {
-  const { modalState, toggleModal } = usePortStore();
+  const { modalState, setModalState } = usePortStore();
 
   const showModal = () => {
-    toggleModal(true);
+    setModalState({
+      ...modalState,
+      isOpen: true
+    });
   };
 
   const handleOk = () => {
-    toggleModal(false);
+    setModalState(initialModalState);
   };
 
   const handleCancel = () => {
-    toggleModal(false);
+    setModalState(initialModalState);
   };
+
   return (
     <Container>
       <StyledButton onClick={showModal}>{i18n.getText('common.addnewport')}</StyledButton>
       <Modal
-        title={i18n.getText('common.addnewport')}
-        open={modalState}
+        title={modalState.isEdit ? i18n.getText('common.editport') : i18n.getText('common.addnewport')}
+        open={modalState.isOpen}
         footer={null}
         onCancel={handleCancel}
       >

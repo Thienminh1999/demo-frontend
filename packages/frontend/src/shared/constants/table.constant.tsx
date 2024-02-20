@@ -1,6 +1,10 @@
-import type { TableProps } from "antd";
+import { PortTableItemType } from "../types/Port.type";
 
-export const columns: TableProps<any>["columns"] = [
+export const sorter = (a: PortTableItemType, b: PortTableItemType): number => {
+  return new Date(b.lastChangedDateTime).getTime() - new Date(a.lastChangedDateTime).getTime();
+};
+
+export const columns: any = [
   {
     title: "Country",
     dataIndex: "country",
@@ -61,4 +65,17 @@ export const columns: TableProps<any>["columns"] = [
 
 export enum QueryKeys {
   PORT_DATA = 'portData',
+}
+
+export enum FormFieldNames {
+  COUNTRY = 'country',
+  NAME = 'name',
+  PORT_CODE = 'portCode',
+  VESSELS_IN_PORT = 'vesselsInPort',
+  DEPARTURES = 'departures',
+  ARRIVALS = 'arrivals',
+  TYPE = 'type',
+  AREA_LOCAL = 'areaLocal',
+  AREA_GLOBAL = 'areaGlobal',
+  OTHER_PORT_NAMES = 'otherPortNames',
 }

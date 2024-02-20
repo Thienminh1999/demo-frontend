@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 :root {
   --main-color: #a27b5c;
   --secondary-color: #fcf7ef;
@@ -26,7 +27,8 @@
   }
 }
 
-body, html {
+body,
+html {
   overflow: hidden
 }
 
@@ -47,4 +49,8 @@ body, html {
   height: 100vh;
   background-color: #F0F2F3;
   overflow-y: auto;
+}
+
+.ant-popconfirm-buttons .ant-btn-primary {
+  background-color: #1677ff;
 }

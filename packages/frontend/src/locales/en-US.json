@@ -3,12 +3,14 @@
     "portmanagement": "Port Management",
     "dashboard": "Dashboard",
     "addnewport": "Add New",
+    "editport": "Edit",
     "english": "English",
     "vietnamese": "Tiếng Việt",
     "selectlanguage": "Select Language",
     "button": {
       "submit": "Submit",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "save": "Save"
     }
   },
   "table": {
@@ -22,7 +24,8 @@
       "type": "Type",
       "areaLocal": "Area Local",
       "areaGlobal": "Area Global",
-      "otherPortNames": "Other Port Names"
+      "otherPortNames": "Other Port Names",
+      "operations": "Actions"
     }
   }
 }

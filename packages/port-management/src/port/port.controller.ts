@@ -3,7 +3,6 @@ import { MessagePattern, Payload } from "@nestjs/microservices";
 import { PortService } from "./port.service";
 import { CreatePort } from "../dtos/CreatePort.dto";
 import { UpdatePort } from "../dtos/UpdatePort.dto";
-import { DeletePort } from "../dtos/DeletePort.dto";
 
 @Controller()
 export class PortController {
@@ -35,7 +34,7 @@ export class PortController {
   }
 
   @MessagePattern("delete_port")
-  deletePort(@Payload() body: DeletePort) {
-    return this.portService.deletePort(body)
+  deletePort(id: string) {
+    return this.portService.deletePort(id)
   }
 }
