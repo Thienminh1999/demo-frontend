@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
-  faTable,
+  faAnchor
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 import ChangeLocale from "../ChangeLocale/ChangeLocale";
@@ -22,7 +22,7 @@ function Sitebar() {
     },
     {
       href: "/table",
-      icon: faTable,
+      icon: faAnchor,
       name: `${i18n.getText('common.portmanagement')}`,
     },
   ];

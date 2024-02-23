@@ -2,6 +2,7 @@ import { DEFAULT_LANGUAGE, MY_LANGUAGE } from '@/shared/constants/locale.constan
 import { PortDataType } from '@/shared/types/Port.type';
 import { create } from 'zustand'
 import Cookies from "js-cookie";
+import { devtools, persist } from 'zustand/middleware';
 
 type ModalState = {
   isOpen: boolean
@@ -25,11 +26,16 @@ export const initialModalState = {
   formData: null
 }
 
-export const usePortStore = create<PortState>((set) => ({
-  ports: initialState,
-  locale: Cookies.get(MY_LANGUAGE) || DEFAULT_LANGUAGE,
-  modalState: initialModalState,
-  setPorts: (ports: PortDataType) => set(() => ({ ports: ports })),
-  setLocale: (newLocale: string) => set(() => ({ locale: newLocale })),
-  setModalState: (state: ModalState) => set(() => ({ modalState: state })),
-}));
+export const usePortStore = create<PortState>()(
+  persist(
+    devtools(
+      (set) => ({
+        ports: initialState,
+        locale: Cookies.get(MY_LANGUAGE) || DEFAULT_LANGUAGE,
+        modalState: initialModalState,
+        setPorts: (ports: PortDataType) => set(() => ({ ports: ports })),
+        setLocale: (newLocale: string) => set(() => ({ locale: newLocale })),
+        setModalState: (state: ModalState) => set(() => ({ modalState: state })),
+      })), {
+    name: 'port-store'
+  }));

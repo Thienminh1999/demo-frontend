@@ -20,8 +20,6 @@ function PieChartContainer() {
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
-        borderWidth: 2,
       },
     ],
   };

@@ -1,8 +1,5 @@
 import TitleContainer from "@/shared/components/TitleContainer/TitleContainer";
 import React from "react";
-import { TableFetcher } from "./table/table.fetcher";
-import { QueryKeys } from "@/shared/constants/table.constant";
-import { useQuery } from "@tanstack/react-query";
 import i18n from "@/locales/core/i18n";
 import DashBoardContainer from "@/components/dashboard/DashBoardContainer";
 import { useQueryPortData } from "@/hooks/useQueryPortData";

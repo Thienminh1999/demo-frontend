@@ -1,17 +1,19 @@
 import React from "react";
 import Cookies from "js-cookie";
-import {
-  MY_LANGUAGE,
-} from "@/shared/constants/locale.constant";
+import { MY_LANGUAGE } from "@/shared/constants/locale.constant";
 import { usePortStore } from "@/store/usePortStore";
 import i18n from "@/locales/core/i18n";
+import useForceUpdate from "@/hooks/useForceUpdate";
 
 export default function ChangeLocale() {
+  const forceUpdate = useForceUpdate();
   const { setLocale, locale } = usePortStore();
 
   const switchLocaleAction = (value: string) => {
     Cookies.set(MY_LANGUAGE, value)
     setLocale(value);
+    i18n.initialize(value)
+    forceUpdate();
   };
 
   return (

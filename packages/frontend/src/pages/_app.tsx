@@ -8,25 +8,18 @@ import { ConfigProvider } from "antd";
 import { theme } from "@/config/theme";
 import { usePortStore } from "@/store/usePortStore";
 import Head from "next/head";
-import intl from "@/locales/core/intl";
 import { useEffect, useState } from "react";
-import useForceUpdate from "@/hooks/useForceUpdate";
-import { LOCALE_DATA } from "@/shared/constants/locale.constant";
+import i18n from "@/locales/core/i18n";
 
 function App({ Component, pageProps }: AppProps) {
-  const forceUpdate = useForceUpdate();
   const { locale } = usePortStore();
   const [initDone, setInitDone] = useState(false);
 
   useEffect(() => {
-    intl.init({
-      // debug: true,
-      currentLocale: locale,
-      locales: LOCALE_DATA,
+    i18n.initialize(locale).then(() => {
+      setInitDone(true);
     });
-    forceUpdate();
-    setInitDone(true);
-  }, [locale]);
+  }, []);
 
   return (
     <>
